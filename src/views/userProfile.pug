@@ -1,0 +1,16 @@
+extends base
+include mixins/videolist
+
+block content
+    div.profile__top
+        a(href="/users/edit")
+            img.profile__avatar(src="/"+loggedInUser.avatarUrl)
+        span.profile__title #{loggedInUser.username}
+    div.profile__videos
+        h2 Uploaded Videos
+        br
+        div.myvideo__grid
+            each video in user.videos
+                +videolist(video)
+            else
+                span.empty__message Any Videos uploaded

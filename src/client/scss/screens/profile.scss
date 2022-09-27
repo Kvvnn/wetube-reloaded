@@ -1,0 +1,41 @@
+.profile__top{
+    margin: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .profile__avatar{
+        object-fit: cover;
+        object-position: 100% 0;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    .profile__title{
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+.profile__videos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a:hover{
+        color: $red;
+    }
+    h2{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .myvideo__grid{
+        display: grid;
+        grid-template-columns: repeat(2 1fr);
+    }
+    .empty__message{
+        font-size: 20px;
+        font-weight: 700;
+    }
+}

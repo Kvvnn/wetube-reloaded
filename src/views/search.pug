@@ -1,0 +1,16 @@
+extends base
+include mixins/video
+
+block content
+    form.video__search(method="GET")
+        input.search__bar(placeholder="Search by Title", name="keyword", type="text", required)
+        div.search__btn
+            i.fa.fa-search
+            input(type="submit", value="")
+
+
+    div.video__grid
+        each video in videos
+            +video(video)
+        else 
+            span.empty__message Sorry I can't find any video

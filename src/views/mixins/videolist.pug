@@ -1,0 +1,8 @@
+mixin videolist(video)
+    div.videolist-mixin
+        div.videolist-mixin__thumb
+        div.videolist-mixin__data
+            a(href=`/videos/${video.id}`)=video.title
+            div.video-mixin__meta
+                span #{video.owner.name}
+                span #{video.meta.views} views

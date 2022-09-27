@@ -1,0 +1,79 @@
+#videoContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin-top:50px;
+    video{
+        width: 90%;
+    }
+    .videoControls{
+        input[type="range"]{
+            -webkit-appearance: none;
+            outline:none;
+            height: 5px;
+            border-radius: 5px;
+            background: gray;
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
+                appearance: none; /* 기본 CSS 스타일을 적용하지 않기 위해서 */
+                width: 10px; /* 슬라이더 핸들 길이 */
+                height: 10px; /* 슬라이더 핸들 높이 */
+                border-radius: 50%; /* 핸들 모양을 원모양으로 만들기 위함 */
+                background: $red; /* 슬라이더 핸들 색상 */
+                cursor: pointer; /* 슬라이더 핸들에 마우스를 갖다대면 포인터로 변경 */
+            }
+        }
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        &.Showing{
+            opacity: 0.8;
+        }
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 20px;
+        border-radius: 5px;
+        transform: translateY(-50px);
+        background-color: black;
+        .videoControls__playBtn{
+            flex:0.5;
+        }
+        .videoControls__time{
+            font-size: 14px;
+            font-weight: 500;
+            flex:10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:white;
+            .videoControls__timeline{
+                width: 80%;
+            }
+        }
+        .videoControls__sound{
+            flex:2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .videoControls__muteBtn{
+                display: flex;
+                justify-content: center;
+            }
+            .videoControls__volume{
+                width: 60%;
+                margin-right: 10px;
+            }
+        }
+        .videoControls__fullscreen{
+            display: flex;
+            justify-content: flex-end;
+            flex:0.5;
+        }
+        i:hover{
+            color:$red;
+        }
+    }
+}

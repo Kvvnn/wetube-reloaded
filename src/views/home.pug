@@ -1,6 +1,11 @@
 extends base.pug
+include mixins/video
 
-  
 
 block content
-    h1 Home!
+    div.video__grid
+        each videovideo in videos
+            +video(videovideo)
+
+        else
+            span.empty__message Sorry, Nothing Found

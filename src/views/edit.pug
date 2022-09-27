@@ -1,6 +1,10 @@
 extends base.pug
 
-
-
 block content
-    h1 Edit video! #{videoNum}
+    h3 Update Video "#{video.title}"
+    form(method="POST")
+        input(name="title",placeholder="Video Title",value=video.title,required)
+        input(name="description", type='text', placeholder="Description", value=video.description, required, minlength=20)
+        input(name="hashtags", type='text', placeholder="Hashtags, separated by comma", value=video.hashtags.join(), required)
+        input(value="save",type="submit")
+    a(href=`../${video.id}`) CANCEL &larr;
