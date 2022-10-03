@@ -124,7 +124,7 @@ export const callbackGithubLogin = async(req, res) => {
         let user = await User.findOne({email: emailObj.email});
         if(!user){
             user = await User.create({
-                avaterUrl: userData.avater_url,
+                avatarUrl: userData.avatar_url,
                 name: userData.name,
                 username: userData.login,
                 email: emailObj.email,
