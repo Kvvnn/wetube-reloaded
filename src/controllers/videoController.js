@@ -1,6 +1,6 @@
-import Video from "../models/Video";
-import User from "../models/User";
-import Comment from "../models/Comment";
+import Video from "../models/Video.js";
+import User from "../models/User.js";
+import Comment from "../models/Comment.js";
 import { async } from "regenerator-runtime";
 
 
@@ -15,7 +15,6 @@ export const watch = async(req, res) => {
     if(!video){
         return res.render("404",{pageTitle: "video not found😵"});
     }
-    console.log(video);
     return res.render("watch", {pageTitle: video.title, video});
 }
 
@@ -38,8 +37,8 @@ export const postUpload = async (req, res) => {
         const newVideo = await Video.create({
             title,
             description,
-            videoUrl: video[0].path,
-            thumbUrl: thumb[0].path,
+            videoUrl: video[0].location,
+            thumbUrl: thumb[0].location,
             owner:_id,
             hashtags: Video.formatHashtags(hashtags)
         });

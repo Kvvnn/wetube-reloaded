@@ -1,7 +1,7 @@
 import express from "express";
-import { home , search } from "../controllers/videoController";
-import { getJoin , postJoin , getLogin, postLogin} from "../controllers/usersController";
-import { publicOnlyMiddleware } from "../middlewares";
+import { home , search } from "../controllers/videoController.js";
+import { getJoin , postJoin , getLogin, postLogin} from "../controllers/usersController.js";
+import { publicOnlyMiddleware } from "../middlewares.js";
 
 const rootRouter = express.Router();
 

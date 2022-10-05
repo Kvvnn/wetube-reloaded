@@ -3,11 +3,11 @@ import express from "express";
 import session from "express-session";
 import flash from "express-flash";
 import MongoStore from "connect-mongo";
-import rootRouter from "./routers/rootRouter";
-import usersRouter from "./routers/usersRouter";
-import videosRouter from "./routers/videosRouter";
-import { localsMiddleware } from "./middlewares";
-import apiRouter from "./routers/apiRouter";
+import rootRouter from "./routers/rootRouter.js";
+import usersRouter from "./routers/usersRouter.js";
+import videosRouter from "./routers/videosRouter.js";
+import { localsMiddleware } from "./middlewares.js";
+import apiRouter from "./routers/apiRouter.js";
 
 
 
@@ -34,7 +34,7 @@ app.use(
 );
 
 app.use((req,res,next) => {
-    res.header("Cross-Origin-Embedder-Policy","require-corp");
+    res.header("Cross-Origin-Embedder-Policy","credentialless");
     res.header("Cross-Origin-Opener-Policy","same-origin");
     next();
 });
