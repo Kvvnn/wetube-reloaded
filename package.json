@@ -6,7 +6,6 @@
     "type": "git",
     "url": "git+https://github.com/Kvvnn/wetube-reloaded.git"
   },
-  "type": "module",
   "scripts": {
     "start": "node build/init.js",
     "build": "npm run build:server && npm run build:assets",
